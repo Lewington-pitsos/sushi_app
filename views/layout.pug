@@ -1,0 +1,40 @@
+include _mixins.pug
+doctype html
+html(lang="en-US")
+  head
+    +stylesheet_link('main')
+    title Sushi Restaurant Website
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+    +js_link('vendor/all')
+    +js_link('handlebars_templates')
+  body
+    header
+      a.logo(href="/")
+        img(src="/images/logo.png" alt="logo")
+      div.cart
+        a(href="/")
+          span.left Shopping Cart
+          span.right
+            span.count 0 items
+    main
+      div#cart
+        ul
+        section
+          h3 Your<br/>shopping cart
+          p.total $0.00
+          p
+          footer
+            a.left.empty_cart(href="#") Empty cart
+            a.right.checkout(href="/checkout") Checkout
+      div.content
+        block content
+    
+    footer
+    +js_link('mixins')
+    +js_link('application')
+    +js_link('models/dish')
+    +js_link('collections/dishes', 'collections/cartitems')
+    +js_link('views/dishesview', 'views/dishview', 'views/cartview', 'views/cartitemview', 'views/infoview', 'views/infosection', 'views/headerview', 'views/checkoutview', 'views/checkoutitemview')
+    +js_link('history')
+    script(type='text/javascript').
+      Application.init()
