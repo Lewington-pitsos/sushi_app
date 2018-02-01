@@ -29,6 +29,9 @@
     "handlebars-webpack-plugin": "^1.3.0"
   },
   "description": "Sushi website",
+  "engines": {
+    "node": "8.9.4"
+  },
   "main": "app.js",
   "author": "lewington",
   "license": "MIT"
